@@ -1,0 +1,255 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500&display=swap');
+
+:root {
+    --Red: hsl(0, 100%, 66%);
+    --White: hsl(0, 0%, 100%);
+    --Light-grayish-violet: hsl(270, 3%, 87%);
+    --Dark-grayish-violet: hsl(279, 6%, 55%);
+    --Very-dark-violet: hsl(278, 68%, 11%);
+    --Light-violet: hsl(290, 36%, 46%);
+}
+
+* {
+    font-family: 'Space Grotesk', sans-serif;
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+
+.container {
+    display: flex;
+    align-items: center;
+}
+
+body {
+    background-image: url("../images/bg-main-desktop.png");
+    background-repeat: no-repeat;
+}
+
+.left_section {
+    min-height: 100vh;
+    width: 40%;
+    position: relative;
+}
+
+.cards {
+    position: absolute;
+    top: 50%;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    left: 100%;
+    transform: translate(-50%, -50%);
+}
+
+.card-front {
+    position: relative;
+    right: 100px;
+}
+
+.card-front__logo {
+    position: absolute;
+    top: 1rem;
+    left: 1.4rem;
+}
+
+#card-front__number {
+    position: absolute;
+    color: var(--White);
+    bottom: 5rem;
+    left: 1.4rem;
+    letter-spacing: 2px;
+    font-size: 1.7rem;
+    font-weight: 100;
+}
+
+#card-front__name {
+    position: absolute;
+    bottom: 2rem;
+    left: 1.4rem;
+    right: 3rem;
+    font-size: 1rem;
+    color: var(--White);
+    text-transform: uppercase;
+}
+
+#card-front__date {
+    position: absolute;
+    bottom: 2rem;
+    left: 22rem;
+    font-size: 1rem;
+    color: var(--White);
+    text-transform: uppercase;
+}
+
+.card-back {
+    position: relative;
+}
+
+#cvc {
+    position: absolute;
+    right: 3.5rem;
+    top: 6.8rem;
+    color: var(--Light-grayish-violet);
+}
+
+.right_section {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+
+.right_section_form {
+    display: grid;
+    gap: 1rem;
+    width: 350px;
+    grid-template-columns: 1fr;
+    grid-template-rows: 70px 70px 70px 70px;
+}
+
+label {
+    color: var(--Very-dark-violet);
+    margin-bottom: .3rem;
+    text-transform: uppercase;
+    font-size: 18px
+}
+
+.form__threeinputs {
+    display: inline;
+}
+
+input {
+    padding: .5rem;
+    font-size: 18px;
+    border: 1px solid var(--Light-grayish-violet);
+    border-radius: 6px;
+    cursor: pointer;
+    width: 100%;
+}
+
+/* .card_information {
+    display: flex;
+} */
+
+form button {
+    font-size: 18px;
+    height: 50px;
+    color: var(--White);
+    border-radius: 6px;
+    background: var(--Very-dark-violet);
+    cursor: pointer;
+    margin-top: 30px;
+}
+
+input:focus {
+    border: 1px solid var(--Red);
+    outline: none;
+}
+
+#form__btn-confirm:hover {
+    background-color: var(--Light-violet);
+    outline: none;
+}
+
+.card_information {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 5px;
+}
+
+.span-2 {
+    grid-column: span 2;
+}
+
+.completed {
+    width: 350px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+}
+
+.completed h1 {
+    text-transform: uppercase;
+    letter-spacing: 3px;
+}
+
+.completed p {
+    font-size: 18px;
+    color: var(--Dark-grayish-violet);
+}
+
+.completed button {
+    color: var(--White);
+    width: 100%;
+    border-radius: 6px;
+    padding: 1rem;
+    font-size: 18px;
+    background-color: var(--Very-dark-violet);
+    cursor: pointer;
+}
+
+.hidden {
+    display: none;
+}
+
+.errors {
+    color: var(--Red);
+    font-size: 0.7rem;
+    display: block;
+}
+
+@media (max-width:375px) {
+
+    .container {
+        display: flex;
+        flex-direction: column;
+        height: 100vh;
+        align-items: center;
+        justify-content: center;
+    }
+
+    body {
+        background-image: url("../images/bg-main-mobile.png");
+        background-repeat: no-repeat;
+        max-height: 250px;
+        width: 100vw;
+        background-size: cover;
+        position: relative;
+    }
+
+    .left_section {
+        min-height: 100px;
+    }
+
+    .card-back {
+        transform: scale(0.5);
+        z-index: 0;
+        top: -270px;
+        right: 30px;
+    }
+
+    .card-front {
+        transform: scale(0.5);
+        z-index: 1;
+        top: 90px;
+    }
+
+    .right_section {
+        width: 300px;
+        min-height: 100px;
+        min-height: 200px;
+    }
+
+    #form__btn-confirm {
+        margin-top: 20px;
+    }
+
+    form {
+        margin-bottom: 10px;
+    }
+}

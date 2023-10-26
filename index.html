@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive card details form</title>
+    <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png" />
+    <link rel="stylesheet" href="css/stylev2.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="left_section">
+            <div class="cards">
+                <section class="card-front">
+                    <img src="./images/card-logo.svg" alt="card-front__logo" class="card-front__logo" />
+                    <div class="card__content">
+                        <img src="./images/bg-card-front.png" alt="front-card" />
+                        <span id="card-front__number">0000 0000 0000 0000</span>
+                        <span id="card-front__name">Jane Appleseed</span>
+                        <div id="card-front__date">
+                            <span id="card-front__month">00</span>
+                            <span>/</span>
+                            <span id="card-front__year">00</span>
+                        </div>
+                    </div>
+                </section>
+                <section class="card-back">
+                    <img src="./images/bg-card-back.png" alt="back-card" />
+                    <span id="cvc">000</span>
+                </section>
+            </div>
+        </div>
+
+        <div class="right_section">
+            <form id="form" class="right_section_form">
+
+                <div>
+                    <label class="form__label" for="card_name">Cardholder Name</label>
+                    <input class="form__input" type="text" minlength="1" maxlength="30"
+                        placeholder="e.g. Jane Appleseed" id="card_name" required />
+                    <span id="errorCardName" class="errors"></span>
+                </div>
+                <div>
+                    <label class="form__label" for="card_number">Card Number</label>
+                    <input class="form__input" type="text" minlength="16" maxlength="16"
+                        placeholder="e.g. 1234 5678 9123 0000" id="card_number" required />
+                    <span id="errorCardNumber" class="errors"></span>
+                </div>
+                <div class="card_information">
+                    <label class="form__label span-2" for="card_date">Exp. Date (MM/YY)</label>
+                    <label class="form__label span-2" for="card_cvc">CVC</label>
+                    <div><input class="form__input" type="text" minlength="2" maxlength="2" placeholder="MM"
+                            id="card_month" required />
+                        <span id="errorCardMonth" class="errors"></span>
+                    </div>
+                    <div><input class="form__input" type="text" minlength="2" maxlength="2" placeholder="YY"
+                            id="card_year" required />
+                        <span id="errorCardYear" class="errors"></span>
+                    </div>
+                    <div><input class="form__input span-2" type="text" minlength="3" maxlength="3" placeholder="CVC"
+                            id="card_cvc" required />
+                        <span id="errorCardCvc" class="errors"></span>
+                    </div>
+                </div>
+                <button id="form__btn-confirm" type="button">Confirm</button>
+            </form>
+
+            <div id="form__thankYou" class="completed hidden">
+                <img src="./images/icon-complete.svg" alt="Completed" />
+                <h1>Thank you!</h1>
+                <p>We've added your card details</p>
+                <button id="form__btn-continue" type="button">Continue</button>
+            </div>
+            <script src="javascript.js"></script>
+</body>
+
+</html>
